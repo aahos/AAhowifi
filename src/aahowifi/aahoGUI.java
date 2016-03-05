@@ -27,6 +27,7 @@ public class aahoGUI extends javax.swing.JFrame {
         prolay.setVisible(false);
         probtn.setToolTipText("Click to Create a new Hotspot Profile.");
         hotspot.setToolTipText("Click to Start the Hotspot.");
+        Instructbtn.setToolTipText("How to configure Hotspot.");
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -45,6 +46,7 @@ public class aahoGUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         probtn = new javax.swing.JToggleButton();
+        Instructbtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,7 +88,7 @@ public class aahoGUI extends javax.swing.JFrame {
                     .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
         prolay.setLayer(ssid, javax.swing.JLayeredPane.DEFAULT_LAYER);
         prolay.setLayer(pass, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -100,6 +102,13 @@ public class aahoGUI extends javax.swing.JFrame {
             }
         });
 
+        Instructbtn.setText("Instructions");
+        Instructbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InstructbtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,31 +116,36 @@ public class aahoGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(probtn, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 210, Short.MAX_VALUE)
                 .addComponent(hotspot, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(89, 89, 89))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(69, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(252, 252, 252))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(Instructbtn)
+                        .addGap(280, 280, 280))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(prolay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40))))
+                        .addGap(32, 32, 32))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hotspot)
                     .addComponent(probtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
+                .addComponent(prolay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(prolay)
-                .addContainerGap())
+                .addComponent(Instructbtn)
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -225,6 +239,10 @@ else{
 // TODO add your handling code here:
     }//GEN-LAST:event_probtnActionPerformed
 
+    private void InstructbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InstructbtnActionPerformed
+     new Instructions().setVisible(true);    // TODO add your handling code here:
+    }//GEN-LAST:event_InstructbtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -261,6 +279,7 @@ else{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Instructbtn;
     private javax.swing.JToggleButton hotspot;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
